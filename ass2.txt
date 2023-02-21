@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment123
+{
+    class Studentdb
+    {
+        static void Main(string[] args)
+        {
+            int[] mark = new int[10];
+
+            Console.WriteLine("Enter Ten marks:");
+            for (int i = 0; i < 10; i++)
+            {
+                mark[i] = int.Parse(Console.ReadLine());
+            }
+
+            int total = 0;
+            int min = mark[0];
+            int max = mark[0];
+            for (int i = 0; i < 10; i++)
+            {
+                total += mark[i];
+                if (mark[i] < min)
+                {
+                    min = mark[i];
+                }
+                if (mark[i] > max)
+                {
+                    max = mark[i];
+                }
+            }
+
+            double avg = (double)total / 10;
+
+            Console.WriteLine("Total : " + total);
+            Console.WriteLine("Average : " + avg);
+            Console.WriteLine("Minimum : " + min);
+            Console.WriteLine("Maximum : " + max);
+
+            Array.Sort(mark);
+
+            Console.WriteLine("Marks in ascending order:");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write(mark[i] + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Marks descending order:");
+            for (int i = 9; i >= 0; i--)
+            {
+                Console.Write(mark[i] + " ");
+            }
+            Console.WriteLine();
+            Console.Read();
+        }
+    }
+}
