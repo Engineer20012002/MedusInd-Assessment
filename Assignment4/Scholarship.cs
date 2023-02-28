@@ -11,7 +11,7 @@ namespace Assignment4
         public int total;
         public float fees;
 
-        public float Success(int x, float y)
+        public float Merit(int x, float y)
         {
             if (x >= 70 && x <= 80)
             {
@@ -34,13 +34,13 @@ namespace Assignment4
         {
             scholarship a = new scholarship();
 
-            Console.WriteLine(" Total Marks: ");
+            Console.WriteLine("Please Enter Total Marks: ");
             a.total = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(" Enter Fees: ");
+            Console.WriteLine("Please Enter Fees: ");
             a.fees = Convert.ToSingle(Console.ReadLine());
 
-            Console.WriteLine("Scholarship Amount : " + sc.Merit(sc.total_marks, sc.fees));
+            Console.WriteLine("Scholarship Amount is: " + a.Merit(a.total, a.fees));
             Console.ReadLine();
         }
     }
